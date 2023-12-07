@@ -17,5 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: make
-
+      run: make -j 4
+    
+    - name: release
+      uses: actions/upload-artifact@v3.1.3
+      with:
+        path: ./
